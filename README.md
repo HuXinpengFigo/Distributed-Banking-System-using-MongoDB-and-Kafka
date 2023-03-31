@@ -3,15 +3,6 @@
 ## Project structure
 
 ```
-Load Balancer: Flask Limiter & Kafka
-Message Bus: Kafka
-Banking Server: MongoDB
----Banking Server 1: 
---------MongoDB collection: BankingServer
----Banking Server 2: 
---------MongoDB collection: BankingServerBackup
-
-
 Main Language: Python
 REST api: Flask
 Back-end: pymongo
