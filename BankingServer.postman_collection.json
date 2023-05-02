@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "bc2ee5e2-2eb7-43e0-8a2d-b89c22662247",
+		"name": "BankingServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get account by accountId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts?accountId=1234567899",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "1234567899"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account_type\": \"savings\",\r\n    \"balance\": 1500.0,\r\n    \"currency\": \"USD\",\r\n    \"account_holder\": {\r\n        \"name\": \"John Smith\",\r\n        \"email\": \"john.smith@example.com\",\r\n        \"address\": {\r\n            \"line1\": \"123 Main St.\",\r\n            \"line2\": \"\",\r\n            \"city\": \"Anytown\",\r\n            \"state\": \"CA\",\r\n            \"zip_code\": \"12345\",\r\n            \"country\": \"USA\"\r\n        },\r\n        \"phone_number\": \"555-555-5555\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new credit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 0.05,\r\n    \"currency\": \"BTC\",\r\n    \"description\": \"Paycheck deposit\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts/1234567899/credits",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts",
+						"1234567899",
+						"credits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new debits",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 0.05,\r\n    \"currency\": \"BTC\",\r\n    \"description\": \"Grocery shopping\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts/1234567899/debits",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts",
+						"1234567899",
+						"debits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction by accountId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts/1234567899/transactions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts",
+						"1234567899",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "john.smith@example.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "john123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "john.smith@example.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "john123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction by accountId (filtering with type)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MDIzMzE4MiwianRpIjoiNTk5OGFhZDAtOTE3NS00ZjUyLTgwY2MtOTI0MTgxYjYzYmNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImpvaG4uc21pdGhAZXhhbXBsZS5jb20iLCJuYmYiOjE2ODAyMzMxODIsImV4cCI6MTY4MDIzNDA4Mn0.mH3qcZ39Ywe_7fkbcnO5C2MMbk_kW7oYXq_CC07FzC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/accounts/1234567899/transactions?type=debits",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"accounts",
+						"1234567899",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "debits"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -3,6 +3,15 @@
 ## Project structure
 
 ```
+Load Balancer: Flask Limiter & Kafka
+Message Bus: Kafka
+Banking Server: MongoDB
+---Banking Server 1: 
+--------MongoDB collection: BankingServer
+---Banking Server 2: 
+--------MongoDB collection: BankingServerBackup
+
+
 Main Language: Python
 REST api: Flask
 Back-end: pymongo
@@ -29,6 +38,8 @@ Back-end requirement
 ### Setup server
 
 Change the `URI` and `Kafka Server`in the start of `MessageBus.py` and `Server.py` to your own server path
+
+Especially for `Kafka`, you have to set the `topic` and related parameter as your local setting
 
 ### Start 
 
